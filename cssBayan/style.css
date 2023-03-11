@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Serif", Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(#c7a1b2, #78b2e9);
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.accordion {
+  width: 80vw;
+  margin: 0 auto;
+  cursor: default;
+}
+
+h1 {
+  color: #2e2f30;
+  font-size: 2rem;
+}
+
+p {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  color: #2e2f30;
+}
+
+i {
+  transition: all 1s;
+}
+
+img {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  margin: 0 auto;
+  transition: all 1s;
+  padding-top: 1rem;
+}
+
+input {
+  opacity: 0;
+  z-index: -1;
+}
+
+
+label {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+  border-bottom: 1px solid #2e2f30;
+  padding: 1em;
+}
+
+input:checked~p i {
+  transform: rotate(45deg);
+  transition: all 1s;
+}
+
+input:checked~img {
+  width: 80%;
+  height: 100%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+@media screen and (min-width: 820px) {
+
+  .accordion {
+    width: 70vw;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  p {
+    font-weight: 400;
+    font-size: 1.7rem;
+  }
+
+  input:checked~img {
+    width: 70%;
+  }
+
+  img {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+
+  .accordion {
+    width: 60vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  input:checked~img {
+    width: 60%;
+  }
+
+  p {
+    font-size: 2.2rem;
+  }
+
+  i {
+    opacity: 0;
+  }
+
+  label:hover img{
+    width: 60%;
+    height: 100%;
+    transition: all 1s;
+    opacity: 1;
+  }
+  label:hover i {
+    transform: rotate(45deg);
+    transition: all 1s;
+  }
+
+  label:active {
+    opacity: 0.6;
+  }
+  .accordion:hover label {
+    cursor: pointer;
+  }
+  .accordion:hover p {
+    font-weight: 700;
+    color: #293346;
+  }
+  .accordion:hover i {
+    opacity: 1;
+    transform: 0.1s;
+  }
+}
