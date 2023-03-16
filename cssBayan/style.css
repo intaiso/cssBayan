@@ -28,14 +28,14 @@ body {
 }
 
 p {
-  font-weight: 700;
   display: flex;
   justify-content: space-between;
   color: #2e2f30;
 }
 
 i {
-  transition: all 1s;
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 img {
@@ -68,11 +68,53 @@ input:checked~p i {
   transition: all 1s;
 }
 
-input:checked~img {
-  width: 80%;
+label:hover img {
+  width: 60%;
   height: 100%;
   transition: all 1s;
   opacity: 1;
+}
+
+label:hover i {
+  transform: rotate(45deg);
+  transition: all 1s;
+}
+
+.accordion:hover label {
+  cursor: pointer;
+}
+
+.accordion:hover p {
+  font-weight: 700;
+  color: #293346;
+}
+
+.accordion:hover i {
+  opacity: 1;
+  transform: 0.1s;
+}
+
+label:active p i {
+  color: #854e65;
+  transition: all 0.1s;
+}
+
+label:active .title {
+  color: #507699;
+  transition: all 0.1s;
+}
+
+input:checked~img {
+  width: 60%;
+  height: 100%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+
+label:active img {
+  opacity: 0.6;
+  transition: all 0.1s;
 }
 
 @media screen and (min-width: 820px) {
@@ -91,7 +133,7 @@ input:checked~img {
   }
 
   input:checked~img {
-    width: 70%;
+    width: 60%;
   }
 
   img {
@@ -119,46 +161,5 @@ input:checked~img {
 
   i {
     opacity: 0;
-  }
-
-  label:hover img {
-    width: 60%;
-    height: 100%;
-    transition: all 1s;
-    opacity: 1;
-  }
-
-  label:hover i {
-    transform: rotate(45deg);
-    transition: all 1s;
-  }
-
-  .accordion:hover label {
-    cursor: pointer;
-  }
-
-  .accordion:hover p {
-    font-weight: 700;
-    color: #293346;
-  }
-
-  .accordion:hover i {
-    opacity: 1;
-    transform: 0.1s;
-  }
-
-  label:active p i {
-    color: #854e65;
-    transition: all 0.1s;
-  }
-
-  label:active .title {
-    color: #507699;
-    transition: all 0.1s;
-  }
-
-  label:active img{
-    opacity: 0.6;
-    transition: all 0.1s;
   }
 }
